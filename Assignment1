@@ -1,0 +1,210 @@
+class Customer:
+    def __init__(self, customer_id, name, email, phone_number, status):
+        self.__customer_id = customer_id
+        self.__name = name
+        self.__email = email
+        self.__phone_number = phone_number
+        self.__status = status
+
+    # Getter for customer_id
+    def get_customer_id(self):
+        return self.__customer_id
+
+    # Setter for customer_id
+    def set_customer_id(self, customer_id):
+        self.__customer_id = customer_id
+
+    # Getter for name
+    def get_name(self):
+        return self.__name
+
+    # Setter for name
+    def set_name(self, name):
+        self.__name = name
+
+    # Getter for email
+    def get_email(self):
+        return self.__email
+
+    # Setter for email
+    def set_email(self, email):
+        self.__email = email
+
+    # Getter for phone_number
+    def get_phone_number(self):
+        return self.__phone_number
+
+    # Setter for phone_number
+    def set_phone_number(self, phone_number):
+        self.__phone_number = phone_number
+
+    # Getter for status
+    def get_status(self):
+        return self.__status
+
+    # Setter for status
+    def set_status(self, status):
+        self.__status = status
+
+
+# Example Usage
+customer = Customer("123456", "Ahmed", "Ahmed@gmail.com", "0507750337", "Active")
+print("Customer ID:", customer.get_customer_id())
+print("Customer Name:", customer.get_name())
+print("Customer Email:", customer.get_email())
+print("Customer Phone:", customer.get_phone_number())
+print("Customer Status:", customer.get_status())
+
+
+class Reservation:
+    def __init__(self, reservation_id, check_in_date, check_out_date, number_of_nights, room_type):
+        self.__reservation_id = reservation_id
+        self.__check_in_date = check_in_date
+        self.__check_out_date = check_out_date
+        self.__number_of_nights = number_of_nights
+        self.__room_type = room_type
+
+    # Getter for reservation_id
+    def get_reservation_id(self):
+        return self.__reservation_id
+
+    # Setter for reservation_id
+    def set_reservation_id(self, reservation_id):
+        self.__reservation_id = reservation_id
+
+    # Getter for check_in_date
+    def get_check_in_date(self):
+        return self.__check_in_date
+
+    # Setter for check_in_date
+    def set_check_in_date(self, check_in_date):
+        self.__check_in_date = check_in_date
+
+    # Getter for check_out_date
+    def get_check_out_date(self):
+        return self.__check_out_date
+
+    # Setter for check_out_date
+    def set_check_out_date(self, check_out_date):
+        self.__check_out_date = check_out_date
+
+    # Getter for number_of_nights
+    def get_number_of_nights(self):
+        return self.__number_of_nights
+
+    # Setter for number_of_nights
+    def set_number_of_nights(self, number_of_nights):
+        self.__number_of_nights = number_of_nights
+
+    # Getter for room_type
+    def get_room_type(self):
+        return self.__room_type
+
+    # Setter for room_type
+    def set_room_type(self, room_type):
+        self.__room_type = room_type
+
+
+# Example Usage
+reservation = Reservation("234567", "15-09-2024", "20-09-2024", 4, "Double")
+print("Reservation ID:", reservation.get_reservation_id())
+print("Check-in Date:", reservation.get_check_in_date())
+print("Check-out Date:", reservation.get_check_out_date())
+print("Number of Nights:", reservation.get_number_of_nights())
+print("Room Type:", reservation.get_room_type())
+
+
+class Payment:
+    def __init__(self, payment_id, amount, payment_method):
+        self.__payment_id = payment_id
+        self.__amount = amount
+        self.__payment_method = payment_method
+        self.__status = "Pending"  # Default status
+
+    # Getter for payment_id
+    def get_payment_id(self):
+        return self.__payment_id
+
+    # Setter for payment_id
+    def set_payment_id(self, payment_id):
+        self.__payment_id = payment_id
+
+    # Getter for amount
+    def get_amount(self):
+        return self.__amount
+
+    # Setter for amount
+    def set_amount(self, amount):
+        self.__amount = amount
+
+    # Getter for payment_method
+    def get_payment_method(self):
+        return self.__payment_method
+
+    # Setter for payment_method
+    def set_payment_method(self, payment_method):
+        self.__payment_method = payment_method
+
+    # Getter for status
+    def get_status(self):
+        return self.__status
+
+    # Setter for status
+    def set_status(self, status):
+        self.__status = status
+
+
+# Example Usage
+payment = Payment("345678", 1500.00, "Credit Card")
+print("Payment ID:", payment.get_payment_id())
+print("Payment Amount:", payment.get_amount())
+print("Payment Method:", payment.get_payment_method())
+print("Payment Status:", payment.get_status())
+
+
+class Room:
+    def __init__(self, room_id, room_type, price_per_night, availability):
+        self.__room_id = room_id
+        self.__room_type = room_type
+        self.__price_per_night = price_per_night
+        self.__availability = availability
+
+    # Getter for room_id
+    def get_room_id(self):
+        return self.__room_id
+
+    # Setter for room_id
+    def set_room_id(self, room_id):
+        self.__room_id = room_id
+
+    # Getter for room_type
+    def get_room_type(self):
+        return self.__room_type
+
+    # Setter for room_type
+    def set_room_type(self, room_type):
+        self.__room_type = room_type
+
+    # Getter for price_per_night
+    def get_price_per_night(self):
+        return self.__price_per_night
+
+    # Setter for price_per_night
+    def set_price_per_night(self, price_per_night):
+        self.__price_per_night = price_per_night
+
+    # Getter for availability
+    def get_availability(self):
+        return self.__availability
+
+    # Setter for availability
+    def set_availability(self, availability):
+        self.__availability = availability
+
+
+# Example Usage
+room = Room("Room507", "Double", 375.00, True)
+print("Room ID:", room.get_room_id())
+print("Room Type:", room.get_room_type())
+print("Price per Night:", room.get_price_per_night())
+print("Availability:", room.get_availability())
