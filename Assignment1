@@ -1,3 +1,4 @@
+# Customer class
 class Customer:
     def __init__(self, customer_id, name, email, phone_number, status):
         self.__customer_id = customer_id
@@ -46,16 +47,7 @@ class Customer:
     def set_status(self, status):
         self.__status = status
 
-
-# Example Usage
-customer = Customer("123456", "Ahmed", "Ahmed@gmail.com", "0507750337", "Active")
-print("Customer ID:", customer.get_customer_id())
-print("Customer Name:", customer.get_name())
-print("Customer Email:", customer.get_email())
-print("Customer Phone:", customer.get_phone_number())
-print("Customer Status:", customer.get_status())
-
-
+# Reservation class
 class Reservation:
     def __init__(self, reservation_id, check_in_date, check_out_date, number_of_nights, room_type):
         self.__reservation_id = reservation_id
@@ -63,6 +55,7 @@ class Reservation:
         self.__check_out_date = check_out_date
         self.__number_of_nights = number_of_nights
         self.__room_type = room_type
+        self.__status = "Pending"  # Default status
 
     # Getter for reservation_id
     def get_reservation_id(self):
@@ -104,64 +97,7 @@ class Reservation:
     def set_room_type(self, room_type):
         self.__room_type = room_type
 
-
-# Example Usage
-reservation = Reservation("234567", "15-09-2024", "20-09-2024", 4, "Double")
-print("Reservation ID:", reservation.get_reservation_id())
-print("Check-in Date:", reservation.get_check_in_date())
-print("Check-out Date:", reservation.get_check_out_date())
-print("Number of Nights:", reservation.get_number_of_nights())
-print("Room Type:", reservation.get_room_type())
-
-
-class Payment:
-    def __init__(self, payment_id, amount, payment_method):
-        self.__payment_id = payment_id
-        self.__amount = amount
-        self.__payment_method = payment_method
-        self.__status = "Pending"  # Default status
-
-    # Getter for payment_id
-    def get_payment_id(self):
-        return self.__payment_id
-
-    # Setter for payment_id
-    def set_payment_id(self, payment_id):
-        self.__payment_id = payment_id
-
-    # Getter for amount
-    def get_amount(self):
-        return self.__amount
-
-    # Setter for amount
-    def set_amount(self, amount):
-        self.__amount = amount
-
-    # Getter for payment_method
-    def get_payment_method(self):
-        return self.__payment_method
-
-    # Setter for payment_method
-    def set_payment_method(self, payment_method):
-        self.__payment_method = payment_method
-
-    # Getter for status
-    def get_status(self):
-        return self.__status
-
-    # Setter for status
-    def set_status(self, status):
-        self.__status = status
-
-
-# Example Usage
-payment = Payment("345678", 1500.00, "Credit Card")
-print("Payment ID:", payment.get_payment_id())
-print("Payment Amount:", payment.get_amount())
-print("Payment Method:", payment.get_payment_method())
-print("Payment Status:", payment.get_status())
-
-
+# Room class
 class Room:
     def __init__(self, room_id, room_type, price_per_night, availability):
         self.__room_id = room_id
@@ -201,10 +137,77 @@ class Room:
     def set_availability(self, availability):
         self.__availability = availability
 
+# Payment class
+class Payment:
+    def __init__(self, payment_id, amount, payment_method):
+        self.__payment_id = payment_id
+        self.__amount = amount
+        self.__payment_method = payment_method
+        self.__status = "Pending"  # Default status
 
-# Example Usage
-room = Room("Room507", "Double", 375.00, True)
+    # Getter for payment_id
+    def get_payment_id(self):
+        return self.__payment_id
+
+    # Setter for payment_id
+    def set_payment_id(self, payment_id):
+        self.__payment_id = payment_id
+
+    # Getter for amount
+    def get_amount(self):
+        return self.__amount
+
+    # Setter for amount
+    def set_amount(self, amount):
+        self.__amount = amount
+
+    # Getter for payment_method
+    def get_payment_method(self):
+        return self.__payment_method
+
+    # Setter for payment_method
+    def set_payment_method(self, payment_method):
+        self.__payment_method = payment_method
+
+# Create objects with the provided data in figure 1
+# Customer object
+customer = Customer(customer_id=1, name="Ted Vera", email="tedvera@mac.com", phone_number="N/A", status="Confirmed")
+
+# Reservation object
+reservation = Reservation(
+    reservation_id=52523687, 
+    check_in_date="Sun, Aug 22, 2010, 3:00 PM", 
+    check_out_date="Tue, Aug 24, 2010, 12:00 PM", 
+    number_of_nights=2, 
+    room_type="2 Queen Beds"
+)
+
+# Room object
+room = Room(room_id=1, room_type="2 Queen Beds", price_per_night=89.95, availability=True)
+
+# Payment object
+payment = Payment(payment_id=1, amount=201.48, payment_method="Mastercard (ending in 9904)")
+
+# Display the details
+print("Customer Details:")
+print("Name:", customer.get_name())
+print("Email:", customer.get_email())
+print()
+
+print("Reservation Details:")
+print("Reservation ID:", reservation.get_reservation_id())
+print("Check-in Date:", reservation.get_check_in_date())
+print("Check-out Date:", reservation.get_check_out_date())
+print("Number of Nights:", reservation.get_number_of_nights())
+print("Room Type:", reservation.get_room_type())
+print()
+
+print("Room Details:")
 print("Room ID:", room.get_room_id())
 print("Room Type:", room.get_room_type())
-print("Price per Night:", room.get_price_per_night())
-print("Availability:", room.get_availability())
+print("Price per Night: $", room.get_price_per_night())
+print()
+
+print("Payment Details:")
+print("Payment Amount: $", payment.get_amount())
+print("Payment Method:", payment.get_payment_method())
